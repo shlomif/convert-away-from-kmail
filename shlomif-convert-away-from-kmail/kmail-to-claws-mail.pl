@@ -1,6 +1,9 @@
 #!/usr/bin/perl -w
 #
-# Program to import a maildir kmail environement into a thunderbird one.
+# Program to import a maildir kmail environement into a Claws Mail one.
+# 
+# Based on an older script I found to convert from KMail to Thunderbird.
+# Modified by Shlomi Fish ( http://www.shlomifish.org/ )
 
 use strict;
 use warnings;
@@ -10,8 +13,6 @@ use File::Copy;
 use File::Basename;
 use File::Path;
 use File::Spec;
-
-my $cmd="formail";
 
 # CHANGE AS YOU WISH
 my $oldroot = "/home/shlomif/.Mail";
@@ -29,7 +30,6 @@ if ($debug) {
 } else {
 	mkpath("$newroot",0, 0755) if ((not -d "$newroot") && (not $nrisfile));
 }
-# system("$cmd </dev/null >/dev/null 2>/dev/null") == 0 or die "cannot find formail on your \$PATH!\nAborting";
 
 my $tree = File::Find::Object->new({}, $oldroot);
 
