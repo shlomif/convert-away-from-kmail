@@ -77,7 +77,7 @@ while (my $item = $tree->next_obj()) {
         print "CURR: $old_pathname\n";
     }
 
-    if (! -d "$old_pathname/cur")
+    if ($item->is_dir() && (! -d "$old_pathname/cur"))
     {
         next FILE_FIND;
     }
