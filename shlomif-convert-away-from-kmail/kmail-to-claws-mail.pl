@@ -91,6 +91,13 @@ while (my $item = $tree->next_obj()) {
         $comp =~ s{\A\.(.*?)\.directory\z}{$1}ms;
     }
 
+    # Fix to get the mboxes in the right place.
+    # Adapted from a patch by an E-mail correspondent.
+    if ($item->is_file())
+    {
+        push @dest_components, $item->basename();
+    }
+
     my $destname = join("/", @dest_components);
     if ($debug) {
         print "DEST: $destname\n";
