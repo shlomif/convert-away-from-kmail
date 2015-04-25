@@ -1,0 +1,5 @@
+Program to import a maildir kmail environement into a Claws Mail one.
+
+Based on an older script I found to convert from KMail to Thunderbird.
+
+Modified by Shlomi Fish ( http://www.shlomifish.org/ )
