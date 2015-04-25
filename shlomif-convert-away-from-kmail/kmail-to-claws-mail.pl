@@ -1,7 +1,7 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
 #
 # Program to import a maildir kmail environement into a Claws Mail one.
-# 
+#
 # Based on an older script I found to convert from KMail to Thunderbird.
 # Modified by Shlomi Fish ( http://www.shlomifish.org/ )
 
@@ -25,7 +25,7 @@ my $debug = 0;
 
 $debug++ if ((defined $ARGV[0]) && ($ARGV[0] eq "-v"));
 print "DEBUG MODE, not doing anything, just printing\n" if ($debug);
-if ($debug) { 
+if ($debug) {
 	print "CMD1: mkdir -p $newroot\n" if ((not -d "$newroot") && (not $nrisfile));
 } else {
 	mkpath("$newroot",0, 0755) if ((not -d "$newroot") && (not $nrisfile));
@@ -73,7 +73,7 @@ while (my $item = $tree->next_obj()) {
     }
 
     if ($debug)
-    { 
+    {
         print "CURR: $old_pathname\n";
     }
 
