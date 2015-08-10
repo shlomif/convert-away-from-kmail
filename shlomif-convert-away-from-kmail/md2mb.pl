@@ -24,7 +24,7 @@ my $debug = 0;
 
 $debug++ if ((defined $ARGV[0]) && ($ARGV[0] eq "-v"));
 print "DEBUG MODE, not doing anything, just printing\n" if ($debug);
-if ($debug) { 
+if ($debug) {
 	print "CMD1: mkdir -p $newroot\n" if ((not -d "$newroot") && (not $nrisfile));
 } else {
 	mkpath("$newroot",0, 0755) if ((not -d "$newroot") && (not $nrisfile));
@@ -69,7 +69,7 @@ while (my $item = $tree->next_obj()) {
     }
 
     if ($debug)
-    { 
+    {
         print "CURR: $old_pathname\n";
     }
 
@@ -97,7 +97,7 @@ while (my $item = $tree->next_obj()) {
         # Done so because glob cannot handle whitespace.
         my @files = (map { @{_my_slurp_dir("$old_pathname/$_")} } (qw(cur new)));
         if (@files) {
-            if ($debug) { 
+            if ($debug) {
                 print "CMD2: mkdir -p $cdir\n" if (not -d "$cdir");
             } else {
                 mkpath($cdir, 0, 0700) if (not -d "$cdir");
@@ -121,7 +121,7 @@ while (my $item = $tree->next_obj()) {
         }
     }
     elsif (-f $old_pathname) {
-        if ($debug) { 
+        if ($debug) {
             print "CMD2: mkdir -p $cdir\n" if (not -e "$cdir");
             print "CMD3: cp $old_pathname $cdir\n";
         } else {
